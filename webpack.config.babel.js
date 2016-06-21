@@ -96,7 +96,7 @@ tplPages.forEach((pathname)=> {
     let conf = {
         filename: 'html/' + pathname + '.html', //生成的html存放路径，相对于path
         // template: 'src/html/' + pathname + '.html', //html模板路径
-        template: 'ejs-compiled!src/html_tpl/' + pathname + '.ejs', //ejs模板路径
+        template: 'ejs-compiled!src/html_tpl/' + pathname + '.ejs', //ejs模板路径,前面最好加上loader用于处理
         inject: false  //js插入的位置，true/'head'/'body'/false
     };
     //如果文件名和文件名所对应的js有匹配

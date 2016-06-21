@@ -161,6 +161,16 @@ webpack内置插件，用于压缩代码
 
 ###参考资料
 
+[webpack官网](http://webpack.github.io/)
+
+[Webpack 入门指迷](https://segmentfault.com/a/1190000002551952)
+
+[WebPack：更优秀的模块依赖管理工具，及require.js的缺陷](http://ourjs.com/detail/54963e2a8a34fa3204000013)
+
+[Webpack-dev-server结合后端服务器的热替换配置](http://www.jianshu.com/p/8adf4c2bfa51)
+
+[前端构建工具webpack有什么缺陷？](https://www.zhihu.com/question/34460535)
+
 ###目录
 
 [TOC]
