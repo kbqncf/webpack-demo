@@ -27,6 +27,7 @@ webpack很出色的一个点就是css in js，把css也当做资源来加载，�
 我所困惑的，也许您也有。希望我的抛砖引玉，会帮到您。
 
 以上。
+
 ###技术栈
 
 webpack+gulp+es6+sass
@@ -126,9 +127,37 @@ html-webpack-plugin插件，webpack中生成HTML的插件.
 
 ####CommonsChunkPlugin
 
+webpack内置插件，用于自动抽取通用模块并合并
 
+在plugins项进行配置
 
+	new CommonsChunkPlugin({
+	            name: 'vendors' // 将公共模块提取，生成名为`vendors`的chunk
+	        })
+	        
+详细API请参考下面地址：
+
+[commonschunkplugin](http://webpack.github.io/docs/list-of-plugins.html#commonschunkplugin)
 <hr>
+
+####UglifyJsPlugin
+
+webpack内置插件，用于压缩代码
+
+在plugins项进行配置
+
+		new UglifyJsPlugin({ //压缩代码
+		            compress: {
+		                warnings: false,
+		                drop_debugger: true,
+		                drop_console: true
+		            },
+		            except: ['$super', '$', 'exports', 'require', 'define', 'module'] //排除关键字
+		        })
+
+详细API请参考下面地址：
+
+[UglifyJsPlugin](http://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin)
 
 ###参考资料
 

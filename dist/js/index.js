@@ -11,7 +11,7 @@ webpackJsonp([0],[
 	//引入js
 
 	//业务代码
-	_base.Base.alert('xxx');
+	_base.Base.alert('ddd');
 
 /***/ },
 /* 1 */

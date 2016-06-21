@@ -52,7 +52,8 @@ let config = {
             {
                 test: /\.(woff|woff2|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
                 loader: 'file-loader?name=./fonts/[name].[ext]'
-            }, {
+            },
+            {
                 //图片加载器，雷同file-loader，更适合图片，可以将较小的图片转成base64，减少http请求
                 //如下配置，将小于8192byte的图片转成base64码
                 test: /\.(png|jpg|gif)$/,
@@ -86,13 +87,16 @@ let config = {
     }
 };
 //所有需要生成的pages,Object.keys 给定对象的所有可枚举自身属性的属性名组成的数组
-let pages = Object.keys(getEntry('./src/html/**/*.html'));
+// let pages = Object.keys(getEntry('./src/html/*.html'));
+//所有ejs模板
+let tplPages = Object.keys(getEntry('./src/html_tpl/*.ejs'));
 // console.log(pages);
-pages.forEach((pathname)=> {
+tplPages.forEach((pathname)=> {
     // console.log(pathname);
-    var conf = {
+    let conf = {
         filename: 'html/' + pathname + '.html', //生成的html存放路径，相对于path
-        template: 'src/html/' + pathname + '.html', //html模板路径
+        // template: 'src/html/' + pathname + '.html', //html模板路径
+        template: 'ejs-compiled!src/html_tpl/' + pathname + '.ejs', //ejs模板路径
         inject: false  //js插入的位置，true/'head'/'body'/false
     };
     //如果文件名和文件名所对应的js有匹配
